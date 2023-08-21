@@ -7,6 +7,24 @@
     <title>Express.js on Vercel</title>
 </head>
 <body>
-    <h1>Express App Responded</h1>
+<style>
+model-viewer {
+  width: 1200px;
+  height: 800px;
+  background-color: #CC99CC;
+}
+model-viewer#reveal {
+    --poster-color: transparent;
+}
+</style>
+<!-- コンポーネントをCDNで読み込む -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+<!-- 3Dモデルを読み込む。
+"exposure"は露出の制御、明るさが変わる。
+"auto-rotate"は自動的に回転表示。
+poster="hoge.png"は、3Dが読み込まれるまで、画像のhoge.pngを表示する設定-->
+<model-viewer id="reveal" loading="eager" camera-controls auto-rotate src="Earth.008.glb"  exposure="0.6" alt="pancake"></model-viewer>
 </body>
 </html>
